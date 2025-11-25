@@ -1,0 +1,5 @@
+Fontes de texto utilizadas no projeto: https://www.dafont.com/pt/erik-luluk.d9968 (play_game)
+
+Background das telas de vitória e derrota: https://www.freepik.com/free-vector/bring-night-space-wallpaper-with-glowing-starfield_230268028.htm#fromView=keyword&page=1&position=0&uuid=d83226c4-d6c6-44b0-a9da-1984923ff20b&query=Space+background+png
+
+Todos os sprites dos inimigos, player e bola foram feitos no pixilart.com pelo próprio autor do trabalho

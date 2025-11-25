@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjagl2umoy5yn"]
+
+[ext_resource type="Texture2D" uid="uid://bokeu1xd4v6vw" path="res://imagens/bola.png" id="1_bicm3"]
+[ext_resource type="Script" uid="uid://c6w6qgopyhl4b" path="res://scripts/bola.gd" id="1_yangn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yangn"]
+radius = 16.0
+
+[node name="Bola" type="CharacterBody2D" groups=["bolas"]]
+collision_mask = 2
+script = ExtResource("1_yangn")
+velocidade = 300.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_yangn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_bicm3")

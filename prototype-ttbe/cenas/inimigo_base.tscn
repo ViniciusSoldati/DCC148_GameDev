@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqbmowiy55a1s"]
+
+[ext_resource type="Script" uid="uid://dcfmdv27v6nf5" path="res://scripts/inimigo_base.gd" id="1_22m37"]
+
+[node name="InimigoBase" type="CharacterBody2D" groups=["Inimigo"]]
+script = ExtResource("1_22m37")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Inicio" type="Marker2D" parent="."]
+
+[node name="Final" type="Marker2D" parent="."]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3upu2o1e8fsr"]
+
+[ext_resource type="PackedScene" uid="uid://bqbmowiy55a1s" path="res://cenas/inimigo_base.tscn" id="1_60d58"]
+[ext_resource type="Texture2D" uid="uid://b3n7nck3xjew4" path="res://imagens/inimigo_azul.png" id="2_c6bo8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o51sv"]
+size = Vector2(196, 80)
+
+[node name="InimigoBase" instance=ExtResource("1_60d58")]
+collision_layer = 2
+velocidade = 100.0
+vida = 20
+
+[node name="Sprite2D" parent="." index="0"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_c6bo8")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_o51sv")
+
+[node name="Inicio" parent="." index="2"]
+position = Vector2(0, -100)
+
+[node name="Final" parent="." index="3"]
+position = Vector2(0, 100)

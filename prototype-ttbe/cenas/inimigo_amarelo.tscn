@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg7p5nxddmeb3"]
+
+[ext_resource type="PackedScene" uid="uid://bqbmowiy55a1s" path="res://cenas/inimigo_base.tscn" id="1_70kkp"]
+[ext_resource type="Texture2D" uid="uid://e6cxghcbtuk8" path="res://imagens/inimigo_amarelo.png" id="1_522io"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n3uno"]
+radius = 29.0
+height = 108.0
+
+[node name="InimigoAmarelo" instance=ExtResource("1_70kkp")]
+collision_layer = 2
+velocidade = 100.0
+vida = 15
+
+[node name="Sprite2D" parent="." index="0"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_522io")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, 4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_n3uno")
+
+[node name="Inicio" parent="." index="2"]
+position = Vector2(-143, 0)
+
+[node name="Final" parent="." index="3"]
+position = Vector2(163, 0)

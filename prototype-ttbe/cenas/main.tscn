@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2qx7w7xj080h"]
+
+[ext_resource type="Script" uid="uid://dnv1kmcwxu7ru" path="res://scripts/main.gd" id="1_b30p5"]
+[ext_resource type="PackedScene" uid="uid://b7f5gxu7cr13g" path="res://cenas/player.tscn" id="1_mtgg2"]
+[ext_resource type="PackedScene" uid="uid://cg7p5nxddmeb3" path="res://cenas/inimigo_amarelo.tscn" id="2_t4ukd"]
+[ext_resource type="PackedScene" uid="uid://b86lmb4qto1f7" path="res://cenas/Hud.tscn" id="4_5wwvk"]
+[ext_resource type="PackedScene" uid="uid://7tl3dlfgdn8j" path="res://cenas/inimigo_verde.tscn" id="4_bhvw8"]
+[ext_resource type="PackedScene" uid="uid://b3upu2o1e8fsr" path="res://cenas/inimigo_azul.tscn" id="5_bhvw8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtgg2"]
+size = Vector2(620, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b30p5"]
+size = Vector2(620, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4ukd"]
+size = Vector2(6, 943)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fhxt"]
+size = Vector2(2, 943)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_b30p5")
+
+[node name="Player" parent="." instance=ExtResource("1_mtgg2")]
+position = Vector2(282, 868)
+
+[node name="Teto" type="StaticBody2D" parent="."]
+position = Vector2(310, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teto"]
+shape = SubResource("RectangleShape2D_mtgg2")
+
+[node name="Chao" type="StaticBody2D" parent="."]
+position = Vector2(310, 940)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+shape = SubResource("RectangleShape2D_b30p5")
+
+[node name="Parede_esq" type="StaticBody2D" parent="."]
+position = Vector2(0, 460)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede_esq"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_t4ukd")
+
+[node name="Parede_dir" type="StaticBody2D" parent="."]
+position = Vector2(620, 460)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede_dir"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_4fhxt")
+
+[node name="InimigoAmarelo" parent="." instance=ExtResource("2_t4ukd")]
+position = Vector2(165, 81)
+
+[node name="Inicio" parent="InimigoAmarelo" index="2"]
+position = Vector2(-112, 0)
+
+[node name="Final" parent="InimigoAmarelo" index="3"]
+position = Vector2(112, 0)
+
+[node name="InimigoAmarelo2" parent="." instance=ExtResource("2_t4ukd")]
+position = Vector2(466, 81)
+velocidade = 130.0
+
+[node name="Inicio" parent="InimigoAmarelo2" index="2"]
+position = Vector2(-112, 0)
+
+[node name="Final" parent="InimigoAmarelo2" index="3"]
+position = Vector2(112, 0)
+
+[node name="Inimigo_verde" parent="." instance=ExtResource("4_bhvw8")]
+position = Vector2(314, 151)
+velocidade = 150.0
+
+[node name="Inimigo_verde2" parent="." instance=ExtResource("4_bhvw8")]
+position = Vector2(481, 151)
+velocidade = 180.0
+
+[node name="Inimigo_verde3" parent="." instance=ExtResource("4_bhvw8")]
+position = Vector2(163, 151)
+
+[node name="InimigoBase" parent="." instance=ExtResource("5_bhvw8")]
+position = Vector2(151, 302)
+velocidade = 150.0
+
+[node name="InimigoBase2" parent="." instance=ExtResource("5_bhvw8")]
+position = Vector2(430, 302)
+
+[node name="Hud" parent="." instance=ExtResource("4_5wwvk")]
+
+[editable path="InimigoAmarelo"]
+[editable path="InimigoAmarelo2"]

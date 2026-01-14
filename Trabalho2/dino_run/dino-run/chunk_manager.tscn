@@ -1,0 +1,15 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmurqr2gmyayi"]
+
+[ext_resource type="Script" uid="uid://tberpsaexsdx" path="res://scripts/chunk_manager.gd" id="1_hy356"]
+[ext_resource type="PackedScene" uid="uid://xsucw88rawwy" path="res://chunks/chunk_up.tscn" id="1_itrbp"]
+[ext_resource type="PackedScene" uid="uid://cq1cya665ni08" path="res://chunks/chunk_flat.tscn" id="2_hy356"]
+[ext_resource type="PackedScene" uid="uid://b7fwv5d8oi658" path="res://chunks/chunk_trees.tscn" id="4_c5l1p"]
+[ext_resource type="PackedScene" uid="uid://oajo44obnot8" path="res://chunks/chunk_platform_start.tscn" id="5_gpxps"]
+[ext_resource type="PackedScene" uid="uid://0bvptrggcwau" path="res://chunks/victory_chunk.tscn" id="6_jpi3m"]
+
+[node name="Chunk_manager" type="Node2D"]
+script = ExtResource("1_hy356")
+chunk_scenes = Array[PackedScene]([ExtResource("2_hy356"), ExtResource("1_itrbp"), ExtResource("4_c5l1p"), ExtResource("5_gpxps")])
+chunk_width = 1152
+victory_distance = 10000.0
+victory_chunk = ExtResource("6_jpi3m")

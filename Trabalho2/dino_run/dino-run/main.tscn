@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://moyxh3sxl7j1"]
+
+[ext_resource type="Texture2D" uid="uid://dbv7qids15f7y" path="res://Tiles/Assets/Background_2.png" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://c7ug0ggcuqpt4" path="res://scripts/main.gd" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://7b1c5w4aow2e" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cj7onuphu0ds7" path="res://Tiles/Assets/Background_1.png" id="2_lquwl"]
+[ext_resource type="Script" uid="uid://2ig24vvhfycs" path="res://scripts/camera_2d.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bmurqr2gmyayi" path="res://chunk_manager.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://lsr7jb83tl0c" path="res://hud.tscn" id="7_272bh"]
+[ext_resource type="AudioStream" uid="uid://c3spqnedau77i" path="res://soundtrack/Sketchbook 2025-12-03 LOOP.ogg" id="8_5vw27"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_7mycd")
+
+[node name="Parallax1" type="Parallax2D" parent="."]
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(0, 100)
+repeat_size = Vector2(496, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="Parallax1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.3333333
+offset_top = -67.333336
+offset_right = 492.66666
+offset_bottom = 204.66666
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_1bvp3")
+
+[node name="Parallax2" type="Parallax2D" parent="."]
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.4, 0.4)
+scroll_offset = Vector2(0, 100)
+repeat_size = Vector2(496, 0)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.3333333
+offset_top = -67.333336
+offset_right = 492.66666
+offset_bottom = 204.66666
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_lquwl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+script = ExtResource("3_1bvp3")
+velocidade = 200.0
+aceleracao = 5.0
+max_velocidade = 600.0
+
+[node name="Chunk_manager" parent="." instance=ExtResource("3_h2yge")]
+
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(32, 323)
+
+[node name="Hud" parent="." instance=ExtResource("7_272bh")]
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5vw27")
+autoplay = true

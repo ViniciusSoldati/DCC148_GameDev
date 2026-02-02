@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl144867ob71b"]
+
+[ext_resource type="PackedScene" uid="uid://d4n2c5awwkgyd" path="res://import_characters/Rogue.glb" id="1_jtk4a"]
+[ext_resource type="PackedScene" uid="uid://ovjn63ujn3w6" path="res://Accessories/crossbow_1handed.gltf" id="2_bmf4b"]
+[ext_resource type="AnimationLibrary" uid="uid://ksiclj2qq2cf" path="res://Animations/Rig_Medium_Animations/player.res" id="2_fwu5m"]
+
+[node name="Rogue" instance=ExtResource("1_jtk4a")]
+
+[node name="Skeleton3D" parent="Rig_Medium" index="0"]
+bones/0/rotation = Quaternion(-1.0242502e-09, 0.13052633, 7.779969e-09, 0.9914449)
+bones/1/position = Vector3(-0.016689325, 0.39767092, 0.062285345)
+bones/1/rotation = Quaternion(-1.15128e-09, 0.17364807, 1.0437785e-08, 0.9848078)
+bones/2/position = Vector3(0.15888228, 0.0687299, 0.024548754)
+bones/2/rotation = Quaternion(0.9786471, 0.11404631, 0.16181076, -0.055323545)
+bones/3/rotation = Quaternion(0.3221357, 7.852604e-08, -2.0313928e-07, 0.9466936)
+bones/4/rotation = Quaternion(-0.69250613, -0.09716152, 0.10447606, 0.70716316)
+bones/5/rotation = Quaternion(-0.00023146046, 0.92003244, -0.39184213, 5.25667e-05)
+bones/6/position = Vector3(-0.17094508, 0.11358732, 1.557549e-08)
+bones/6/rotation = Quaternion(0.9461536, -0.08490506, 0.30563584, -0.06458641)
+bones/7/rotation = Quaternion(0.0019648, -7.306595e-08, -5.05284e-09, 0.9999981)
+bones/8/rotation = Quaternion(-0.39942825, 0.1012799, -0.07011579, 0.908451)
+bones/9/rotation = Quaternion(4.0353836e-05, 0.92040706, -0.39096153, -1.7124548e-05)
+bones/10/rotation = Quaternion(-9.921615e-10, 0.1305262, 7.729601e-09, 0.9914449)
+bones/11/rotation = Quaternion(0.09623399, -0.12940943, 0.088182226, 0.98296297)
+bones/12/position = Vector3(-0.21695764, 0.13413227, -0.03292024)
+bones/12/rotation = Quaternion(-0.6044567, 0.47060105, 0.40578613, 0.4985022)
+bones/13/rotation = Quaternion(5.692581e-08, 2.8092948e-08, 0.6547264, 0.75586605)
+bones/14/rotation = Quaternion(7.300499e-09, -7.3388096e-09, -0.0266581, 0.99964464)
+bones/14/scale = Vector3(1.0000001, 1, 1)
+bones/15/rotation = Quaternion(0.0822847, 0.6360025, 0.0052889953, 0.7672693)
+bones/16/position = Vector3(-0.0032758717, 0.09574348, -0.074703574)
+bones/16/rotation = Quaternion(0.03239636, 0.0032841312, 0.70666623, 0.70679736)
+bones/17/rotation = Quaternion(-0.12432153, -0.29421702, -0.03976499, 0.94678366)
+bones/18/position = Vector3(0.21200736, 0.13413203, 7.9299625e-08)
+bones/18/rotation = Quaternion(-0.58350295, -0.1724497, -0.63777745, 0.47225568)
+bones/19/rotation = Quaternion(5.3711375e-08, -6.385623e-08, -0.3876, 0.9218278)
+bones/20/rotation = Quaternion(7.250843e-09, 9.200791e-09, 0.026658095, 0.99964464)
+bones/20/scale = Vector3(0.99999994, 1, 1.0000001)
+bones/21/rotation = Quaternion(-0.1085928, -0.2884977, -0.10303877, 0.94570595)
+bones/22/position = Vector3(-6.936717e-09, 0.096125185, -0.057500005)
+bones/22/rotation = Quaternion(6.9489685e-09, -3.587743e-09, -0.7071068, 0.7071067)
+
+[node name="Right hand" type="BoneAttachment3D" parent="Rig_Medium/Skeleton3D" index="7"]
+transform = Transform3D(0.02308897, 0.0021160431, -0.99973094, 0.012681892, 0.9999164, 0.002409257, 0.99965197, -0.012734103, 0.023060426, -0.26693565, 0.99777985, 0.69262356)
+bone_name = "handslot.r"
+bone_idx = 16
+
+[node name="crossbow_1handed2" parent="Rig_Medium/Skeleton3D/Right hand" index="0" instance=ExtResource("2_bmf4b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"player": ExtResource("2_fwu5m")
+}

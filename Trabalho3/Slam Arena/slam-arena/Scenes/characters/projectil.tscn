@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc4gaj2mnw0vo"]
+
+[ext_resource type="PackedScene" uid="uid://b2vv4qve0p5qu" path="res://Scenes/characters/Arrow_CrossBow.tscn" id="1_1qc74"]
+[ext_resource type="Script" uid="uid://y443nvid5aic" path="res://Scripts/projectile.gd" id="1_2vtp6"]
+[ext_resource type="AudioStream" uid="uid://bdqi1eusmurfd" path="res://SFX/Crossbow_shoot1.ogg.mp3" id="3_5d6ed"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2vtp6"]
+radius = 0.047192134
+
+[node name="Projectile" type="Area3D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_2vtp6")
+velocidade = 20.0
+life_time = 3.0
+damage = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.32444814)
+shape = SubResource("SphereShape3D_2vtp6")
+
+[node name="arrow_crossbow2" parent="." instance=ExtResource("1_1qc74")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5d6ed")
+volume_db = -8.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="arrow_crossbow2"]

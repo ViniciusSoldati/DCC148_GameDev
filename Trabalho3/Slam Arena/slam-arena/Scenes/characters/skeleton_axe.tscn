@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbhxe7iw7u5lt"]
+
+[ext_resource type="PackedScene" uid="uid://dg4t7k1cyfkf1" path="res://Accessories/Skeleton_Axe.gltf" id="1_50ogm"]
+[ext_resource type="Script" uid="uid://bsqnkl4vk2ro7" path="res://Scripts/skeleton_axe.gd" id="2_qgxrn"]
+[ext_resource type="AudioStream" uid="uid://c37dolnqsixgl" path="res://SFX/axe_swing.mp3" id="3_b54jk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgxrn"]
+size = Vector3(0.91503906, 0.3, 0.3)
+
+[node name="Skeleton_Axe2" instance=ExtResource("1_50ogm")]
+script = ExtResource("2_qgxrn")
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6768443, 0)
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("BoxShape3D_qgxrn")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("3_b54jk")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

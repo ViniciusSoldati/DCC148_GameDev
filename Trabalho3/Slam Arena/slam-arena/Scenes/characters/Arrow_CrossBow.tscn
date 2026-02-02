@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2vv4qve0p5qu"]
+
+[ext_resource type="PackedScene" uid="uid://cgj5ablrmxis4" path="res://Accessories/arrow_crossbow.gltf" id="1_vucjw"]
+
+[node name="arrow_crossbow2" instance=ExtResource("1_vucjw")]

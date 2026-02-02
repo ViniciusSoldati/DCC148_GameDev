@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0ovv8omuxcwu"]
+
+[ext_resource type="PackedScene" uid="uid://d0c5gpnhv17xe" path="res://import_characters/Skeleton_Warrior.glb" id="1_fheb8"]
+[ext_resource type="PackedScene" uid="uid://c1k0i7b44fo5v" path="res://Accessories/Skeleton_Shield_Large_A.gltf" id="2_3uocv"]
+[ext_resource type="AnimationLibrary" uid="uid://cg5m2a41t1tg4" path="res://Animations/Rig_Medium_Animations/enemy.res" id="2_8gacr"]
+[ext_resource type="PackedScene" uid="uid://bbhxe7iw7u5lt" path="res://Scenes/characters/skeleton_axe.tscn" id="3_3uocv"]
+
+[sub_resource type="Animation" id="Animation_3uocv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rig_Medium/Skeleton3D/Right hand/Skeleton_Axe2/Area3D:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o8dem"]
+_data = {
+&"RESET": SubResource("Animation_3uocv")
+}
+
+[node name="Skeleton_Warrior" instance=ExtResource("1_fheb8")]
+
+[node name="Skeleton3D" parent="Rig_Medium" index="0"]
+bones/1/position = Vector3(2.6057842e-08, 0.39206383, -0.109294534)
+bones/1/rotation = Quaternion(-4.159024e-09, 0.39768216, 2.3446312e-08, 0.91752326)
+bones/2/rotation = Quaternion(-9.912704e-19, 7.1054274e-15, 7.0434e-33, 1)
+bones/3/rotation = Quaternion(8.271806e-25, 3.7252903e-09, -2.75506e-40, 1)
+bones/4/position = Vector3(-0.21200737, 0.13413203, 8.6813984e-08)
+bones/4/rotation = Quaternion(-0.5413109, 0.36768505, 0.617668, 0.43620706)
+bones/5/rotation = Quaternion(3.368332e-08, 2.2260197e-08, 0.8361719, 0.5484676)
+bones/6/rotation = Quaternion(-3.002606e-08, -9.604189e-09, -0.026658088, 0.99964464)
+bones/6/scale = Vector3(1.0000001, 1.0000001, 1)
+bones/7/rotation = Quaternion(0.06489217, -0.1804387, -0.30709374, 0.9321611)
+bones/8/position = Vector3(-5.138494e-10, 0.096125126, -0.057499975)
+bones/8/rotation = Quaternion(1.6805911e-09, -1.6805904e-09, 0.7071068, 0.7071067)
+bones/9/position = Vector3(0.21200736, 0.13413203, 7.9299625e-08)
+bones/9/rotation = Quaternion(-0.22262423, -0.2725062, -0.70175976, 0.619445)
+bones/10/rotation = Quaternion(3.5927904e-08, -1.5180229e-08, -0.5697407, 0.8218246)
+bones/11/rotation = Quaternion(2.6357031e-11, 6.232488e-10, 0.026658094, 0.99964464)
+bones/11/scale = Vector3(1.0000001, 1, 1)
+bones/12/rotation = Quaternion(-0.10331487, -0.5407534, 0.32817665, 0.7676014)
+bones/13/position = Vector3(-6.936717e-09, 0.096125185, -0.057500005)
+bones/13/rotation = Quaternion(6.9489685e-09, -3.587743e-09, -0.7071068, 0.7071067)
+bones/14/rotation = Quaternion(0.059012968, -0.29021534, 0.02690427, 0.95476115)
+bones/15/position = Vector3(0.17094508, 0.1135872, 1.5994095e-08)
+bones/15/rotation = Quaternion(0.9212755, 0.0374943, 0.3823191, 0.060644645)
+bones/16/rotation = Quaternion(0.24834022, 5.6180347e-08, -1.7198114e-07, 0.96867293)
+bones/17/rotation = Quaternion(-0.5138437, -0.31981522, -0.00037295962, 0.79604197)
+bones/18/rotation = Quaternion(0.00033524306, 0.9202168, -0.39140904, -7.5852106e-05)
+bones/19/position = Vector3(-0.17094508, 0.11358732, 1.557549e-08)
+bones/19/rotation = Quaternion(0.91005147, -0.10520367, 0.40067512, -0.014077662)
+bones/20/rotation = Quaternion(0.1935845, -5.1037773e-08, 1.1455115e-07, 0.9810837)
+bones/21/rotation = Quaternion(-0.50816995, 0.112327, -0.0789462, 0.8502432)
+bones/22/rotation = Quaternion(6.9903544e-05, 0.92028975, -0.3912376, -1.5823127e-05)
+
+[node name="head" parent="Rig_Medium/Skeleton3D" index="0"]
+transform = Transform3D(0.9742724, 0.012295518, 0.22503814, 0.01712141, 0.9915872, -0.12830262, -0.22472247, 0.12885466, 0.9658656, -3.8723364e-08, 1.2278259, -0.10929453)
+
+[node name="Left hand" type="BoneAttachment3D" parent="Rig_Medium/Skeleton3D" index="10"]
+transform = Transform3D(-0.4367911, 0.7000129, 0.5649728, 0.7997914, 0.014720007, 0.60009605, 0.41175908, 0.7139776, -0.5662945, 0.5475607, 0.718511, -0.33818382)
+bone_name = "handslot.l"
+bone_idx = 13
+
+[node name="Skeleton_Shield_Large_A2" parent="Rig_Medium/Skeleton3D/Left hand" index="0" instance=ExtResource("2_3uocv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, -5.3158715e-08, 0.18688405)
+
+[node name="Right hand" type="BoneAttachment3D" parent="Rig_Medium/Skeleton3D" index="11"]
+transform = Transform3D(0.5191743, 0.85466754, -7.6973656e-08, -5.48512e-08, 1.1920929e-07, 0.99999946, 0.85466737, -0.5191747, -4.0626e-09, 0.060599986, 0.9530516, 0.4038001)
+bone_name = "handslot.r"
+bone_idx = 8
+
+[node name="Skeleton_Axe2" parent="Rig_Medium/Skeleton3D/Right hand" index="0" instance=ExtResource("3_3uocv")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_o8dem"),
+&"enemy": ExtResource("2_8gacr")
+}
+
+[editable path="Rig_Medium/Skeleton3D/Right hand/Skeleton_Axe2"]
